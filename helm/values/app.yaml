@@ -1,0 +1,10 @@
+appName: web
+appImage: shukrulloabdukodirov/laravel-image
+appVersion: latest
+appReplicas: 2
+containerPort: 8585
+containerEnvVars:
+  - name: PORT
+    value: "80"
+serviceType: ClusterIP
+servicePort: 8585

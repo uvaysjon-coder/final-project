@@ -1,0 +1,9 @@
+appName: mysql:8.0
+appImage: mysql
+appVersion: 8.0
+appReplicas: 1
+containerPort: 33061
+volumeName: mysql-data
+containerMountPath: /data
+
+servicePort: 33061

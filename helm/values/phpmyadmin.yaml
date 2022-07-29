@@ -1,0 +1,10 @@
+appName: phpmyadmin
+appImage: phpmyadmin
+appVersion: 5.1
+appReplicas: 1
+containerPort: 8888
+containerEnvVars:
+  - name: PMA_ARBITRARY
+    value: "0"
+serviceType: ClusterIP
+servicePort: 8888
