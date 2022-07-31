@@ -44,13 +44,13 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 RUN mkdir /var/docker
 # Copy code to /var/www
-COPY --chown=www:www-data ./application /var/www
-COPY --chown=www:www-data ./docker /var/docker
+COPY --chown=www:vagrant ./application /var/www
+COPY --chown=www:vagrant ./docker /var/docker
 COPY ./.env /var/www/.env
 # add root to www group
-COPY --chown=www:www-data . /var/www
+COPY --chown=www:vagrant . /var/www
 
-RUN chown -R www:www-data /var/www/storage
+RUN chown -R www:vagrant /var/www/storage
 RUN chmod -R ug+w /var/www/storage
 
 # Copy nginx/php/supervisor configs
