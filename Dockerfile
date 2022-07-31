@@ -48,11 +48,10 @@ COPY --chown=www:www-data ./application /var/www
 COPY --chown=www:www-data ./docker /var/docker
 COPY ./.env /var/www/.env
 # add root to www group
-RUN chown -R $USER:www-data /var/www/storage
-RUN chown -R $USER:www-data /var/www/bootstrap/cache
-RUN chmod -R 777 /var/www/storage
-RUN chmod -R 777 /var/www/bootstrap/cache
-RUN chmod -R 777 /var/www/storage/logs/
+COPY --chown=www:www-data . /var/www
+
+RUN chown -R www:www-data /var/www/storage
+RUN chmod -R ug+w /var/www/storage
 
 # Copy nginx/php/supervisor configs
 
